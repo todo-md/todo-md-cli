@@ -1,0 +1,2 @@
+import fs = require('fs')
+

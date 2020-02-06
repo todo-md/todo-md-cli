@@ -1,0 +1,53 @@
+{
+  "name": "todo-md-cli",
+  "description": "Official client to manage multiple TODO.md files.",
+  "version": "0.0.0",
+  "author": "Janik von Rotz @janikvonrotz",
+  "bin": {
+    "todo": "./bin/run"
+  },
+  "bugs": "https://github.com/janikvonrotz/todo-md-cli/issues",
+  "dependencies": {
+    "@oclif/command": "^1.5.19",
+    "@oclif/config": "^1.13.3",
+    "@oclif/plugin-help": "^2.2.3",
+    "tslib": "^1.10.0"
+  },
+  "devDependencies": {
+    "@oclif/dev-cli": "^1.22.2",
+    "@types/node": "^10.17.14",
+    "globby": "^10.0.2",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/janikvonrotz/todo-md-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "todo",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "janikvonrotz/todo-md-cli",
+  "scripts": {
+    "postpack": "rm -f oclif.manifest.json",
+    "prepack": "rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
+    "test": "echo NO TESTS",
+    "version": "oclif-dev readme && git add README.md"
+  },
+  "types": "lib/index.d.ts"
+}

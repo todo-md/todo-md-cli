@@ -1,67 +1,49 @@
-# todo-md-cli
+todo-md-cli
+===========
 
-<img src="./assets/todo-md-cli-logo.svg" width="50px">
+Official client to manage multiple TODO.md files.
 
-Official client to manage multiple [TODO.md](https://github.com/todo-md/todo-md) files.
+[![oclif](https://img.shields.io/badge/cli-oclif-brightgreen.svg)](https://oclif.io)
+[![Version](https://img.shields.io/npm/v/todo-md-cli.svg)](https://npmjs.org/package/todo-md-cli)
+[![Downloads/week](https://img.shields.io/npm/dw/todo-md-cli.svg)](https://npmjs.org/package/todo-md-cli)
+[![License](https://img.shields.io/npm/l/todo-md-cli.svg)](https://github.com/janikvonrotz/todo-md-cli/blob/master/package.json)
 
-## Installation
+<!-- toc -->
+* [Usage](#usage)
+* [Commands](#commands)
+<!-- tocstop -->
+# Usage
+<!-- usage -->
+```sh-session
+$ npm install -g todo-md-cli
+$ todo COMMAND
+running command...
+$ todo (-v|--version|version)
+todo-md-cli/0.0.0 darwin-x64 node-v12.14.1
+$ todo --help [COMMAND]
+USAGE
+  $ todo COMMAND
+...
+```
+<!-- usagestop -->
+# Commands
+<!-- commands -->
+* [`todo help [COMMAND]`](#todo-help-command)
 
-`npm install -g todo-md-cli`
+## `todo help [COMMAND]`
 
-## Usage
+display help for todo
 
-`todo init`: Search for all `TODO.md` files in current folder and subdirectories. Found projects are indexed in `~/.todo-md-cli.json`
+```
+USAGE
+  $ todo help [COMMAND]
 
-`todo update`: Find and reindex all projects that have a `TODO.md` file.
+ARGUMENTS
+  COMMAND  command to show help for
 
-`todo add PROJECTNAME/SECTION "TASK"`: Add new task to project section.
+OPTIONS
+  --all  see all commands in CLI
+```
 
-`todo [PROJECT][/SECTION] ls`: List all tasks, sections or projects. Optionally filter by project and section.
-
-`todo help`: Show ussage of todo-md-cli.
-
-`todo [PROJECT][/SECTION]`: Enter interactive mode to manage task state. Navigate using the `j,k` keys. Use `space` to check/uncheck, `x` to delete, `-` to decline and `q` to quit.
-
-`todo PROJECT sort`: Moves declined and completed task to the `# DONE` section of the `TODO.md` file.
-
-Reserved keywords: add, ls, sort and help.
-
-## Tutorial
-
-Create a project folder and a `TODO.md` file.
-
-`mkdir example-project && cd example-project && touch TODO.md`.
-
-Index the project.
-
-`todo init`
-
-Add a task to the project.
-
-`todo add project-a/tutorial "I completed the todo-md-cli tutorial."`
-
-Create another task.
-
-`todo add project-a/tutorial "I wanna be deleted."`
-
-Delete the second task and check the first.
-
-`todo project/tutorial`
-
-That is all you need to know 😊.
-
-## Development
-
-Clone this repository.
-
-`git clone https://github.com/todo-md/todo-md-cli && cd todo-md-cli`
-
-Install dependencies.
-
-`npm install`
-
-Run tests.
-
-`npm run test`
-
-You are ready to go.
+_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.2.3/src/commands/help.ts)_
+<!-- commandsstop -->
