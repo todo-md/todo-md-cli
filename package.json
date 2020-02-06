@@ -1,7 +1,7 @@
 {
   "name": "todo-md-cli",
   "description": "Official client to manage multiple TODO.md files.",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "author": "Janik von Rotz @janikvonrotz",
   "bin": {
     "todo": "./bin/run"
