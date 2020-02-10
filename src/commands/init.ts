@@ -1,6 +1,7 @@
 import Command, {flags} from '@oclif/command'
-import { getFiles } from './getFiles'
+import getFiles = require('../getFiles')
 import path = require('path')
+import cli from 'cli-ux'
 
 export class InitCommand extends Command {
   static description = 'description of this example command'
@@ -23,11 +24,11 @@ export class InitCommand extends Command {
     const files = getFiles(dirPath, 0, maxdepth, 'TODO.md')
 
     // Build config map
-    const map: Map<string, string> = new Map()
+    const config: Map<string, string> = new Map()
     files.forEach(filename => {
       const projectname = path.dirname(filename).split(path.sep).pop()
-      map[projectname] = filename
+      config[projectname] = filename
     })
-    console.log(JSON.stringify(map, null, 4))
+    console.log(JSON.stringify(config, null, 4))
   }
 }

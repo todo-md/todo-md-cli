@@ -1,7 +1,7 @@
 import fs = require('fs')
 import path = require('path')
 
-export function getFiles(dirPath: string, currentLevel: number, maxLevel: number, filter: string): Array<string> {
+function getFiles(dirPath: string, currentLevel: number, maxLevel: number, filter: string): Array<string> {
     let files: Array<string> = []
 
     // Only walk directory if current depth has not exceed max depth
@@ -30,3 +30,5 @@ export function getFiles(dirPath: string, currentLevel: number, maxLevel: number
     // Return files found in this directory
     return files.filter(value => value.match(filter))
 }
+
+module.exports = getFiles
